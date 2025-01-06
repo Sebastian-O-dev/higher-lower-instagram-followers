@@ -6,13 +6,13 @@ score = 0
 
 
 def pick_account_a():
-    account_a = data[random.randint(0, len(data))]
+    account_a = random.choice(data)
     account_a_followers = account_a.get("follower_count")
     return account_a, account_a_followers
 
 
 def pick_account_b():
-    account_b = data[random.randint(0, len(data))]
+    account_b = random.choice(data)
     account_b_followers = account_b.get("follower_count")
     return account_b, account_b_followers
 
@@ -47,6 +47,7 @@ while True:
         score += 1
         account_a = account_b
         account_b, account_b_followers = pick_account_b()
+        print("\n"*50)
         print(art.logo)
         print(f"\nGuess which account has more instagram followers: ")
         continue
